@@ -2,21 +2,24 @@
 Contributors: coder426
 Donate link: https://hirewebxperts.com/donate/
 Tags: custom add to cart button, cart button for woocommerce, shop button, woocommerce, quote
-Requires at least: 6.3.2
-Tested up to: 6.6
+Requires at least: 6.4
+Tested up to: 6.5
 Requires PHP: 8.0
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC tested up to: 8.4.0
 
+== Short Description ==
+Easily customize your WooCommerce "Add to Cart" button text and link for each product, allowing for unique selling options and enhanced customer experience.
+
 == Description ==
 
-Custom Add to Cart Button Label and Link plugin let you to customize add to cart button by changing its default label's text and its action URL in few simple steps. With latest version, now you can not only change text and link but also configure Add to Cart Button's style with different options as mentioned below. 
+Custom Add to Cart Button Label and Link plugin lets you customize the add to cart button by changing its default label's text and its action URL in a few simple steps. With the latest version, you can not only change the text and link but also configure the Add to Cart Button's style with different options as mentioned below. 
 
-It's a very useful plugin for those who want to sell their products at other platforms like paypal, amazon etc. or want to add affiliate links to the products, simply by adding custom link in button action area.
+It's a very useful plugin for those who want to sell their products on other platforms like PayPal, Amazon, etc., or want to add affiliate links to the products simply by adding a custom link in the button action area.
 
-New Feature Update: Distinct Information per Product. For more information, pls check the following video:
+New Feature Update: Distinct Information per Product. For more information, please check the following video:
 
 https://www.youtube.com/watch?v=7t63igatlOU&t=53
 
@@ -28,23 +31,22 @@ https://www.youtube.com/watch?v=QC1CQ4XIH5Y
 
 * Ability to change default add to cart button text and action on single product page.
 * Ability to change default add to cart button text and action on the Shop page.
-* Customize Add to Cart Button's text, background, hover and border colors.
+* Customize Add to Cart Button's text, background, hover, and border colors.
 * Choose Different Button Shapes like with or without border radius.
-* Add icon to before or after Add to Cart Button.
-* Now, you can add different CSS3 transitions to button on hover.
-* Also, can add CSS3 background transitions to add to cart button.
-* Option to restrict changes only on shop page.
+* Add icon before or after Add to Cart Button.
+* Now, you can add different CSS3 transitions to the button on hover.
+* Also, can add CSS3 background transitions to the add to cart button.
+* Option to restrict changes only on the shop page.
 * Option to restrict changes only on single product page.
 * Compatibility with popular languages like English, Hindi, Spanish, French, Chinese simplified, Chinese traditional, Russian, Japanese, German.
-* You can create Multiple buttons now for each product with different links
-* Ability to control link in new tabs.
-* Shortcode support
-* Widget Support
-* Works with differet product types too.
+* You can create multiple buttons now for each product with different links.
+* Ability to control links in new tabs.
+* Shortcode support.
+* Widget Support.
+* Works with different product types too.
 * New settings to show default Add to Cart Button.
 * Ready to Use Custom Add to Cart Buttons.
-* Distinct Information per Product for a special message e.g. Get 25% Off, Deal of the Day, Black Friday Offer
-
+* Distinct Information per Product for a special message e.g. Get 25% Off, Deal of the Day, Black Friday Offer.
 
 == Installation ==
 
@@ -55,21 +57,19 @@ The plugin is simple to install:
  * Upload catcbll directory to your /wp-content/plugins directory
  * Go to the plugin menu page and activate the plugin.
 
-== Frequently asked questions ==
+== Frequently Asked Questions ==
 
-= How to use Woocommerce Custom Add to Cart Button plugin? =
+= How to use the WooCommerce Custom Add to Cart Button plugin? =
 
 1. Activate the plugin through the Plugins menu in WordPress.
-2. Then go to settings menu and select Custom Cart Button submenu.
-3. Choose appropriate option like to show on shop page or single product page, as per your need.
-4. Now when you add a new product or edit the existing one you will see a section "Product Custom Button Settings" at the bottom of the page.
-5. Fill the corresponding fields and save it's done.
-
+2. Go to the settings menu and select the Custom Cart Button submenu.
+3. Choose the appropriate option to show on the shop page or single product page, as per your need.
+4. When you add a new product or edit an existing one, you will see a section "Product Custom Button Settings" at the bottom of the page.
+5. Fill in the corresponding fields and save; it's done.
 
 = What is the benefit of using this plugin? =
 
-Users can easily change the default add to cart button's label and hyperlink in some simple steps. It gives the ability to sell woocommerce products using third-party platforms like Amazon, Paypal, eBay, Alibaba, etc., and can easily use his / her affiliate links.
-
+Users can easily change the default add to cart button's label and hyperlink in a few simple steps. It gives the ability to sell WooCommerce products using third-party platforms like Amazon, PayPal, eBay, Alibaba, etc., and can easily use their affiliate links.
 
 == Pro Version Features ==
 
@@ -85,25 +85,25 @@ Users can easily change the default add to cart button's label and hyperlink in 
 <blockquote>
 * Icon select with icon picker
 * Change icon size
-* Change icon Position
+* Change icon position
 * Icon spacing / Spinner
 </blockquote>
 <strong> Advance settings </strong>
 <blockquote>
-* All custom button Same Size
-* Default woocommerce button styling
+* All custom button same size
+* Default WooCommerce button styling
 </blockquote>
 <strong> Category Based Custom Buttons</strong>
 <strong> Sold Out Buttons / Out of Stock Buttons which appear automatically when Product is out of Stock.</strong>
 <strong> Per Button Style</strong>
 <strong> Global ( Label / URL )</strong>
-<strong> Shortcode generater</strong>
+<strong> Shortcode generator</strong>
 <strong> Per category</strong>
 <strong> Out of stock</strong>
 <strong> Plugin Premium support</strong>
 <strong> Import 1.5.4 button styling</strong>
-<strong>Compatible with all product types.</strong>
-<strong>Compatible with lambda, Avada, Astra, Divi, The7, etc.</strong>
+<strong> Compatible with all product types.</strong>
+<strong> Compatible with Lambda, Avada, Astra, Divi, The7, etc.</strong>
 
 For help and support, please see:
 
@@ -127,53 +127,56 @@ https://www.youtube.com/watch?v=zd13VVKyEwk&list=PLf40i-H5Xnm5zq-T4eNVfm18G-hs0E
 
 == Changelog ==
 
+= 1.6.2 - 28/Oct/2024 = 
+- Bug Fixes for Security
+
 = 1.6.1 - 03/Jan/2024 = 
-- High-performance order storage (Compatibility with woocommerce)
+- High-performance order storage (Compatibility with WooCommerce)
 
 = 1.6 - 17/Nov/2023 = 
 - Settings Page UI Updated
 - UI Library Updated for Bootstrap
 - Test with PHP 8.2
 
-= 1.5.9   - 29/July/2021 = 
+= 1.5.9 - 29/July/2021 = 
 - Settings Page UI Updated
 - Library Updated i.e. Bootstrap
 - New Feature added for Distinct Information
 
-= 1.5.8   - 29/July/2021 = 
-- Bug Fixed for new version of Woocommerce
+= 1.5.8 - 29/July/2021 = 
+- Bug Fixed for new version of WooCommerce
 
-= 1.5.7   - 27/July/2021 = 
+= 1.5.7 - 27/July/2021 = 
 - Compatible with Ocean Theme
 
-= 1.5.6   - 01/July/2021 = 
+= 1.5.6 - 01/July/2021 = 
 - Added new feature Ready To Use Custom Buttons
 - Added new language for Italian 
 - Optimized Code
 
-= 1.5.5   - 07/Apr/2021 = 
+= 1.5.5 - 07/Apr/2021 = 
 - Bug fixed for admin CSS
 
-= 1.5.4   - 11/Feb/2021 = 
+= 1.5.4 - 11/Feb/2021 = 
 - Added plugin support for Avada Theme and fixed UI issues. Paid Version of this plugin is also launched.
 - Bug fixed
 
-= 1.5.3   - 14/DEC/2020 = 
+= 1.5.3 - 14/DEC/2020 = 
 - Added new feature button alignment
 - Added new feature button position (Left,Right)
 
-= 1.5.2   - 18/SEPT/2020 = 
+= 1.5.2 - 18/SEPT/2020 = 
 - Variation product bug fixed
 - Multisite bug fixed
 
-= 1.5.1   - 04/SEPT/2020 = 
+= 1.5.1 - 04/SEPT/2020 = 
 - Bug fixed
 
-= 1.5   - 11/July/2020 =
+= 1.5 - 11/July/2020 =
 - Translations updated
 - New translations added for Russian, Japanese, German
 - Optimized code
-- compatible with woocommerce 4.3
+- Compatible with WooCommerce 4.3
 
 = 1.4.8 - 07/July/2020 =
 - Bug resolved for variable products
@@ -190,10 +193,9 @@ https://www.youtube.com/watch?v=zd13VVKyEwk&list=PLf40i-H5Xnm5zq-T4eNVfm18G-hs0E
 - Improved plugin layout
 - Added feature for border radius
 
-
 = 1.4.4 - 09/June/2020 =
 - Minor Bugs Fixed
-- Compatible with latest woocommerce
+- Compatible with latest WooCommerce
 - Improved UI for the settings page
 - Padding option added for Buttons
 
@@ -220,12 +222,11 @@ https://www.youtube.com/watch?v=zd13VVKyEwk&list=PLf40i-H5Xnm5zq-T4eNVfm18G-hs0E
 = 1.3 - 31/JAN/2020 =
 - Added Multi Buttons support for each Product
 - Added Multi-Language support
-- Fixed issue with elementor builder
+- Fixed issue with Elementor builder
 
 = 1.2 =
 * 11/12/19
 Minor Updates for latest version
-
 
 = 1.1 =
 * 09/17/19
