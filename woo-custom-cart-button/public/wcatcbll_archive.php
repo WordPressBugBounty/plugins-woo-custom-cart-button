@@ -10,16 +10,16 @@ if (!function_exists('catcbll_woo_template_loop_custom_button')) {
         if (!empty($prd_lbl[0]) && $custom == "custom") { ?>
             <style>
                 :root {
-                    --text-align: <?php echo esc_html($catcbll_custom_btn_alignment); ?>;
-                    --margin: <?php echo esc_html($btn_margin); ?>;
-                    --display: <?php echo esc_html($display); ?>;
-                    --border-radius: <?php echo esc_html($catcbll_btn_radius . 'px ' . $imp); ?>;
-                    --color: <?php echo esc_html($catcbll_btn_fclr . ' ' . $imp); ?>;
-                    --font-size: <?php echo esc_html($catcbll_btn_fsize . 'px ' . $imp); ?>;
-                    --padding: <?php echo esc_html($catcbll_padding_top_bottom . 'px ' . $catcbll_padding_left_right . 'px ' . $imp); ?>;
-                    --border: <?php echo esc_html($catcbll_border_size . 'px solid '); ?>;
-                    --background-color: <?php echo esc_html($catcbll_btn_bg . ' ' . $imp); ?>;
-                    --border-color: <?php echo esc_html($catcbll_btn_border_clr . ' ' . $imp); ?>
+                    --wccb-text-align: <?php echo esc_html($catcbll_custom_btn_alignment); ?>;
+                    --wccb-margin: <?php echo esc_html($btn_margin); ?>;
+                    --wccb-display: <?php echo esc_html($display); ?>;
+                    --wccb-border-radius: <?php echo esc_html($catcbll_btn_radius . 'px ' . $imp); ?>;
+                    --wccb-color: <?php echo esc_html($catcbll_btn_fclr . ' ' . $imp); ?>;
+                    --wccb-font-size: <?php echo esc_html($catcbll_btn_fsize . 'px ' . $imp); ?>;
+                    --wccb-padding: <?php echo esc_html($catcbll_padding_top_bottom . 'px ' . $catcbll_padding_left_right . 'px ' . $imp); ?>;
+                    --wccb-border: <?php echo esc_html($catcbll_border_size . 'px solid '); ?>;
+                    --wccb-background-color: <?php echo esc_html($catcbll_btn_bg . ' ' . $imp); ?>;
+                    --wccb-border-color: <?php echo esc_html($catcbll_btn_border_clr . ' ' . $imp); ?>;
                 }
 
                 <?php
@@ -29,25 +29,25 @@ if (!function_exists('catcbll_woo_template_loop_custom_button')) {
 
                     $crtubtn = explode(" ", $catcbll_ready_to_use);
                     if (!empty($catcbll_btn_fclr)) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--color1: var(--color);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--color1: var(--wccb-color);}";
                     }
                     if (!empty($catcbll_border_size)) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--border1: var(--border);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--border1: var(--wccb-border);}";
                     }
                     if (!empty($catcbll_btn_border_clr)) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--border-color1:var(--border-color);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--border-color1:var(--wccb-border-color);}";
                     }
                     if (!empty($catcbll_padding_top_bottom) && !empty($catcbll_padding_left_right)) {
-                        echo "." . esc_attr($crtubtn[1]) . " { --padding1: var(--padding);}";
+                        echo "." . esc_attr($crtubtn[1]) . " { --padding1: var(--wccb-padding);}";
                     }
                     if (!empty($catcbll_btn_fsize)) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--font-size1: var(--font-size);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--font-size1: var(--wccb-font-size);}";
                     }
                     if (!empty($catcbll_btn_bg)) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--background1: var(--background-color);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--background1: var(--wccb-background-color);}";
                     }
                     if (!empty($catcbll_btn_radius) && $catcbll_btn_radius > 6) {
-                        echo "." . esc_attr($crtubtn[1]) . " {--border-radius1: var(--border-radius);}";
+                        echo "." . esc_attr($crtubtn[1]) . " {--border-radius1: var(--wccb-border-radius);}";
                     } else {
                         $crtubtn_rds = 'var(--border-radius1);';
                     }
@@ -103,6 +103,7 @@ if (!function_exists('catcbll_woo_template_loop_custom_button')) {
         } else {
             woocommerce_template_loop_add_to_cart();
         }
+
         echo '<div class="catcbnl_mtxt">' . esc_html($content) . '</div>';
     }
 }

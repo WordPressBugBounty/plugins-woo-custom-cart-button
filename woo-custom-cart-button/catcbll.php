@@ -1,18 +1,19 @@
 <?php
+
 /**
- * Plugin Name:	    Custom Add to Cart Button Label and Link
+ * Plugin Name:	    Custom Add to Cart Button Label and Link For WooCommerce
  * Plugin URI:	    https://plugins.hirewebxperts.com/custom-add-to-cart/
  * Description:	    WooCommerce Custom ATC button plugin provides that has ability to change woocommerce each product's Add To Cart button with user specific name.
- * Version: 		    1.6.2
+ * Version: 		2.0	
  * Requires at least: 6.5
- * Requires PHP:      8.0
+ * Requires PHP:    8.0
  * Author: 		    Coder426
  * Author URI:	    https://www.hirewebxperts.com
- * Donate link: 	    https://hirewebxperts.com/donate/
- * Text Domain:      catcbll
+ * Donate link: 	https://hirewebxperts.com/donate/
+ * Text Domain:     catcbll
  * Domain Path:	    /i18n/languages
- * License:          GPLv3
- * License URI:      https://www.gnu.org/licenses/gpl-2.0.txt
+ * License:         GPLv3
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 if (!defined('ABSPATH')) {
@@ -24,17 +25,19 @@ if (!defined('CATCBLL_MINIMUM_WOOCOMMERCE_VERSION')) {
 	define('CATCBLL_MINIMUM_WOOCOMMERCE_VERSION', 2.7);
 }
 
-$version = '1.6.2';
+$version = rand();
 $name = 'catcbll';
 
 // Define plugin url path
 define('WCATCBLL_CART_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WCATCBLL_CART_PLUGIN_DIR', dirname(__FILE__));
+define('WCATCBLL_CART_ASSETS', WCATCBLL_CART_PLUGIN_URL . 'assets/');
 define('WCATCBLL_CART_JS', WCATCBLL_CART_PLUGIN_URL . 'assets/js/');
 define('WCATCBLL_CART_CSS', WCATCBLL_CART_PLUGIN_URL . 'assets/css/');
 define('WCATCBLL_CART_IMG', WCATCBLL_CART_PLUGIN_URL . 'assets/img/');
 define('WCATCBLL_CART_INC', WCATCBLL_CART_PLUGIN_DIR . '/include/');
 define('WCATCBLL_CART_PUBLIC', WCATCBLL_CART_PLUGIN_DIR . '/public/');
+define('WCATCBLL_VERSION', '2.0');
 define('version', $version);
 define('WCATCBLL_NAME', $name);
 define('DISABLE_NAG_NOTICES', true);
@@ -44,23 +47,25 @@ require_once(dirname(__FILE__) . '/helpers/helpers.php');
 // Deactivate plugin after registering pro version
 register_activation_hook(__FILE__, 'catcbll_activation');
 
-function catcbll_activation() {
-    // Check if WooCommerce is installed or compatible
-    $notice = catcbll_check_woocommerce_plugin();
-    
-    if ($notice) {
-        deactivate_plugins(basename(__FILE__));
-        // Use esc_html() to escape the output message
-        wp_die(esc_html(catcbll_plugin_die_message(esc_html($notice))));
-    }
-    
-    if (is_plugin_active('custom-add-to-cart-pro/wcatcbnl.php')) {
-        deactivate_plugins('custom-add-to-cart-pro/wcatcbnl.php');
-    }
+function catcbll_activation()
+{
+	// Check if WooCommerce is installed or compatible
+	$notice = catcbll_check_woocommerce_plugin();
+
+	if ($notice) {
+		deactivate_plugins(basename(__FILE__));
+		// Use esc_html() to escape the output message
+		wp_die(esc_html(catcbll_plugin_die_message(esc_html($notice))));
+	}
+
+	if (is_plugin_active('custom-add-to-cart-pro/wcatcbnl.php')) {
+		deactivate_plugins('custom-add-to-cart-pro/wcatcbnl.php');
+	}
 }
 
 add_action('before_woocommerce_init', 'catcbll_hpos_compatibility');
-function catcbll_hpos_compatibility() {
+function catcbll_hpos_compatibility()
+{
 	if (class_exists(\Automattic\WooCommerce\Utilities\FeaturesUtil::class)) {
 		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
 			'custom_order_tables',
@@ -151,7 +156,27 @@ function catcbll_init_options()
 			}
 		}
 	}
-	extract($option_key_vals);
+	// Explicitly define all used variables
+	$wcatcbll_both_btn = $option_key_vals['wcatcbll_both_btn'];
+	$wcatcbll_add2_cart = $option_key_vals['wcatcbll_add2_cart'];
+	$wcatcbll_custom = $option_key_vals['wcatcbll_custom'];
+	$wcatcbll_custom_btn_position = $option_key_vals['wcatcbll_custom_btn_position'];
+	$wcatcbll_cart_global = $option_key_vals['wcatcbll_cart_global'];
+	$wcatcbll_cart_shop = $option_key_vals['wcatcbll_cart_shop'];
+	$wcatcbll_cart_single_product = $option_key_vals['wcatcbll_cart_single_product'];
+	$wcatcbll_btn_bg = $option_key_vals['wcatcbll_btn_bg'];
+	$wcatcbll_btn_fclr = $option_key_vals['wcatcbll_btn_fclr'];
+	$wcatcbll_btn_size = $option_key_vals['wcatcbll_btn_size'];
+	$wcatcbll_btn_shape = $option_key_vals['wcatcbll_btn_shape'];
+	$wcatcbll_btn_icon = $option_key_vals['wcatcbll_btn_icon'];
+	$wcatcbll_btn_border = $option_key_vals['wcatcbll_btn_border'];
+	$wcatcbll_border_size = $option_key_vals['wcatcbll_border_size'];
+	$wcatcbll_btn_2Dhvr = $option_key_vals['wcatcbll_btn_2Dhvr'];
+	$wcatcbll_btn_bghvr = $option_key_vals['wcatcbll_btn_bghvr'];
+	$wcatcbll_btn_hvrclr = $option_key_vals['wcatcbll_btn_hvrclr'];
+	$wcatcbll_btn_icon_psn = $option_key_vals['wcatcbll_btn_icon_psn'];
+	$wcatcbll_btn_padding = $option_key_vals['wcatcbll_btn_padding'];
+	$wcatcbll_btn_open_new_tab = $option_key_vals['wcatcbll_btn_open_new_tab'];
 
 	$top_padding = isset($wcatcbll_btn_padding['top']) ? esc_attr($wcatcbll_btn_padding['top']) : '';
 	$left_padding = isset($wcatcbll_btn_padding['left']) ? esc_attr($wcatcbll_btn_padding['left']) : '';
@@ -233,11 +258,13 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 	// Adding widget
 	include(WCATCBLL_CART_INC . 'wcatcbll_widget.php');
 
+
 	// Setting link to plugin
 	add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'catcbll_add_plugin_page_settings_link');
 
-	function catcbll_add_plugin_page_settings_link($links) {
-		$links[] = '<a href="' . esc_url(admin_url('options-general.php?page=hwx-wccb')) . '">' . esc_html(__('Settings', 'catcbll')) . '</a>';
+	function catcbll_add_plugin_page_settings_link($links)
+	{
+		$links[] = '<a href="' . esc_url(admin_url('admin.php?page=hwx-wccb')) . '">' . esc_html(__('Settings', 'catcbll')) . '</a>';
 		return $links;
 	}
 
@@ -249,7 +276,34 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 	// Cart Setting values
 	$catcbll_settings = get_option('_woo_catcbll_all_settings');
 	if ($catcbll_settings) {
-		extract($catcbll_settings);
+		$catcbll_both_btn = isset($catcbll_settings['catcbll_both_btn']) ? $catcbll_settings['catcbll_both_btn'] : '';
+		$catcbll_add2_cart = isset($catcbll_settings['catcbll_add2_cart']) ? $catcbll_settings['catcbll_add2_cart'] : '';
+		$catcbll_custom = isset($catcbll_settings['catcbll_custom']) ? $catcbll_settings['catcbll_custom'] : '';
+		$catcbll_custom_btn_position = isset($catcbll_settings['catcbll_custom_btn_position']) ? $catcbll_settings['catcbll_custom_btn_position'] : '';
+		$catcbll_cart_global = isset($catcbll_settings['catcbll_cart_global']) ? $catcbll_settings['catcbll_cart_global'] : '';
+		$catcbll_cart_shop = isset($catcbll_settings['catcbll_cart_shop']) ? $catcbll_settings['catcbll_cart_shop'] : '';
+		$catcbll_cart_single_product = isset($catcbll_settings['catcbll_cart_single_product']) ? $catcbll_settings['catcbll_cart_single_product'] : '';
+		$catcbll_btn_fsize = isset($catcbll_settings['catcbll_btn_fsize']) ? $catcbll_settings['catcbll_btn_fsize'] : '';
+		$catcbll_border_size = isset($catcbll_settings['catcbll_border_size']) ? $catcbll_settings['catcbll_border_size'] : '';
+		$catcbll_btn_radius = isset($catcbll_settings['catcbll_btn_radius']) ? $catcbll_settings['catcbll_btn_radius'] : '';
+		$catcbll_btn_bg = isset($catcbll_settings['catcbll_btn_bg']) ? $catcbll_settings['catcbll_btn_bg'] : '';
+		$catcbll_btn_fclr = isset($catcbll_settings['catcbll_btn_fclr']) ? $catcbll_settings['catcbll_btn_fclr'] : '';
+		$catcbll_btn_border_clr = isset($catcbll_settings['catcbll_btn_border_clr']) ? $catcbll_settings['catcbll_btn_border_clr'] : '';
+		$catcbll_btn_hvrclr = isset($catcbll_settings['catcbll_btn_hvrclr']) ? $catcbll_settings['catcbll_btn_hvrclr'] : '';
+		$catcbll_padding_top_bottom = isset($catcbll_settings['catcbll_padding_top_bottom']) ? $catcbll_settings['catcbll_padding_top_bottom'] : '';
+		$catcbll_padding_left_right = isset($catcbll_settings['catcbll_padding_left_right']) ? $catcbll_settings['catcbll_padding_left_right'] : '';
+		$catcbll_margin_top = isset($catcbll_settings['catcbll_margin_top']) ? $catcbll_settings['catcbll_margin_top'] : '';
+		$catcbll_margin_right = isset($catcbll_settings['catcbll_margin_right']) ? $catcbll_settings['catcbll_margin_right'] : '';
+		$catcbll_margin_bottom = isset($catcbll_settings['catcbll_margin_bottom']) ? $catcbll_settings['catcbll_margin_bottom'] : '';
+		$catcbll_margin_left = isset($catcbll_settings['catcbll_margin_left']) ? $catcbll_settings['catcbll_margin_left'] : '';
+		$catcbll_btn_icon_cls = isset($catcbll_settings['catcbll_btn_icon_cls']) ? $catcbll_settings['catcbll_btn_icon_cls'] : '';
+		$catcbll_btn_icon_psn = isset($catcbll_settings['catcbll_btn_icon_psn']) ? $catcbll_settings['catcbll_btn_icon_psn'] : '';
+		$catcbll_btn_2dhvr = isset($catcbll_settings['catcbll_btn_2dhvr']) ? $catcbll_settings['catcbll_btn_2dhvr'] : '';
+		$catcbll_btn_bghvr = isset($catcbll_settings['catcbll_btn_bghvr']) ? $catcbll_settings['catcbll_btn_bghvr'] : '';
+		$catcbll_btn_open_new_tab = isset($catcbll_settings['catcbll_btn_open_new_tab']) ? $catcbll_settings['catcbll_btn_open_new_tab'] : '';
+		$catcbll_hide_2d_trans = isset($catcbll_settings['catcbll_hide_2d_trans']) ? $catcbll_settings['catcbll_hide_2d_trans'] : '';
+		$catcbll_hide_btn_bghvr = isset($catcbll_settings['catcbll_hide_btn_bghvr']) ? $catcbll_settings['catcbll_hide_btn_bghvr'] : '';
+		$catcbll_custom_btn_alignment = isset($catcbll_settings['catcbll_custom_btn_alignment']) ? $catcbll_settings['catcbll_custom_btn_alignment'] : '';
 		$global = isset($catcbll_cart_global) ? esc_attr($catcbll_cart_global) : '';
 		$shop = isset($catcbll_cart_shop) ? esc_attr($catcbll_cart_shop) : '';
 		$single = isset($catcbll_cart_single_product) ? esc_attr($catcbll_cart_single_product) : '';
@@ -263,11 +317,13 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 	if (($global == 'global') || ($shop == 'shop')) {
 		// Remove default ATC button from archive page.
 		if (!function_exists('catcbll_remove_atc_arch')) {
-			function catcbll_remove_atc_arch() {
+			function catcbll_remove_atc_arch()
+			{
 				remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 			}
 		}
 		add_action('init', 'catcbll_remove_atc_arch');
+
 
 		// Custom ATC button on archive page.
 		include(WCATCBLL_CART_PUBLIC . 'wcatcbll_archive.php');
@@ -277,7 +333,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 	if (($global == 'global') || ($single == 'single-product')) {
 		// Remove default ATC button from single product page.
 		if (!function_exists('catcbll_remove_atc_single')) {
-			function catcbll_remove_atc_single() {
+			function catcbll_remove_atc_single()
+			{
 				global $product;
 				if ($product->is_type('variable')) {
 					remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
@@ -288,15 +345,24 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
 		}
 		add_action('woocommerce_before_single_product_summary', 'catcbll_remove_atc_single');
 
+
+
 		// Custom ATC button on single product page.
 		include(WCATCBLL_CART_PUBLIC . 'wcatcbll_single_product.php');
 	} // if setting is global or single product end
+
+	// Elementor Widgets Integration
+	if (did_action('elementor/loaded')) {
+		include(WCATCBLL_CART_INC . 'elementor/class-catcbll-elementor-widgets.php');
+	}
 }
+
 
 if (is_admin()) {
 	add_action('wp_default_scripts', 'catcbll_wp_default_custom_scripts');
 
-	function catcbll_wp_default_custom_scripts($scripts) {
+	function catcbll_wp_default_custom_scripts($scripts)
+	{
 		$scripts->add('wp-color-picker', "/wp-admin/js/color-picker.js", array('iris'), false, 1);
 		did_action('init') && $scripts->localize(
 			'wp-color-picker',
@@ -312,5 +378,3 @@ if (is_admin()) {
 		);
 	}
 }
-
-?>

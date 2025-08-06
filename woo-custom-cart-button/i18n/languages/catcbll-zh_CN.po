@@ -15,6 +15,10 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: catcbll.php:202
+msgid "Rate"
+msgstr ""
+
 #: catcbll.php:203
 msgid "Poor"
 msgstr "较差的"
@@ -660,7 +664,7 @@ msgstr "添加到购物车或立即购物或在亚马逊购物"
 
 #: include/wcatcbll_inscrpt.php:52 include/wcatcbll_metabox.php:55
 #: include/wcatcbll_metabox.php:76
-msgid "This Text Will Be Shown On The Button Linking To The External Product"
+msgid "This text will be shown on the custom add to cart button."
 msgstr "此文本将显示在链接到外部产品的按钮上"
 
 #: include/wcatcbll_inscrpt.php:53 include/wcatcbll_metabox.php:58
@@ -703,6 +707,10 @@ msgstr "Wcatcbll产品展示"
 #: include/wcatcbll_widget.php:234
 msgid "New title"
 msgstr "新标题"
+
+#: include/wcatcbll_widget.php:243
+msgid "Title"
+msgstr ""
 
 #: include/wcatcbll_widget.php:247
 msgid "Number of products to show"
@@ -779,3 +787,253 @@ msgstr "要展示的产品数量"
 
 #~ msgid "General"
 #~ msgstr "一般"
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product Title"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product Image"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Add to Cart"
+msgstr ""
+
+
+#: helpers/helpers.php
+msgid "Go back"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Settings"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Live Demo"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Pro Demo"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product not found"
+msgstr ""
+
+
+#: include/wcatcbll_metabox.php
+msgid "https://example.com"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Submit"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Save Changes"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Reset"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Cancel"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Delete"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Edit"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Update"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Remove"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Add New"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Select"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Choose"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Browse"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Upload"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Download"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Preview"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "View"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Details"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Information"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Description"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Instructions"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Help"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Support"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Documentation"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "FAQ"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Contact"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "About"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Version"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Author"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "License"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Requirements"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Compatibility"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Changelog"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Screenshots"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Reviews"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Rating"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Downloaded"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Last Updated"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Tested"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Languages"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Tags"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Categories"
+msgstr ""

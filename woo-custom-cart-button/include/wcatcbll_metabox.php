@@ -57,7 +57,7 @@ if (!function_exists('catcbll_atc_meta_box_callback')) {
                             <div class="wcatcblltooltip">
                                 <i class="fa fa-question-circle" aria-hidden="true"></i>
                                 <span class="wcatcblltooltiptext">
-                                    <?php echo esc_html__('This Text Will Be Shown On The Button Linking To The External Product', 'catcbll'); ?>
+                                    <?php echo esc_html__('This text will be shown on the custom add to cart button.', 'catcbll'); ?>
                                 </span>
                             </div>
                             <br><br>
@@ -103,7 +103,7 @@ if (!function_exists('catcbll_atc_meta_box_callback')) {
                         <div class="wcatcblltooltip">
                             <i class="fa fa-question-circle" aria-hidden="true"></i>
                             <span class="wcatcblltooltiptext">
-                                <?php echo esc_html__('This Text Will Be Shown On The Button Linking To The External Product', 'catcbll'); ?>
+                                <?php echo esc_html__('This text will be shown on the custom add to cart button.', 'catcbll'); ?>
                             </span>
                         </div>
                         <br><br>

@@ -1,61 +1,71 @@
 <?php
 global $product;
-/*button styling settings */
+
+/* Button styling settings */
 $catcbll_settings = get_option('_woo_catcbll_all_settings');
-extract($catcbll_settings);
-
+// echo "<pre>";
+// print_r($catcbll_settings);
+// echo "</pre>";
 //button display setting
-if (isset($catcbll_both_btn)) {
-    $both  = $catcbll_both_btn;
-} else {
-    $both = '';
-}
-if (isset($catcbll_add2_cart)) {
-    $add2cart = $catcbll_add2_cart;
-} else {
-    $add2cart = '';
-}
-if (isset($catcbll_custom)) {
-    $custom = $catcbll_custom;
-} else {
-    $custom  = '';
-}
-// open new tab
-if (isset($catcbll_btn_open_new_tab)) {
-    $btn_opnt_new_tab  = $catcbll_btn_open_new_tab;
-} else {
-    $btn_opnt_new_tab = '';
-}
+$both             = isset($catcbll_settings['catcbll_both_btn']) ? sanitize_text_field($catcbll_settings['catcbll_both_btn']) : '';
+$add2cart         = isset($catcbll_settings['catcbll_add2_cart']) ? sanitize_text_field($catcbll_settings['catcbll_add2_cart']) : '';
+$custom           = isset($catcbll_settings['catcbll_custom']) ? sanitize_text_field($catcbll_settings['catcbll_custom']) : '';
 
-/*Button Margin*/
-$btn_margin = $catcbll_margin_top . 'px ' . $catcbll_margin_right . 'px ' . $catcbll_margin_bottom . 'px ' . $catcbll_margin_left . 'px';
+$global           = isset($catcbll_settings['catcbll_cart_global']) ? sanitize_text_field($catcbll_settings['catcbll_cart_global']) : '';
+$shop             = isset($catcbll_settings['catcbll_cart_shop']) ? sanitize_text_field($catcbll_settings['catcbll_cart_shop']) : '';
+$single           = isset($catcbll_settings['catcbll_cart_single_product']) ? sanitize_text_field($catcbll_settings['catcbll_cart_single_product']) : '';
+
+// open new tab
+$btn_opnt_new_tab = !empty($catcbll_settings['catcbll_btn_open_new_tab']) ? 1 : 0;
+$catcbll_btn_icon_psn  = isset($catcbll_settings['catcbll_btn_icon_psn']) ? sanitize_text_field($catcbll_settings['catcbll_btn_icon_psn']) : '';
+$catcbll_btn_icon_cls  = isset($catcbll_settings['catcbll_btn_icon_cls']) ? sanitize_text_field($catcbll_settings['catcbll_btn_icon_cls']) : '';
+$catcbll_hide_2d_trans = !empty($catcbll_settings['catcbll_hide_2d_trans']) ? 1 : 0;
+$catcbll_hide_btn_bghvr = !empty($catcbll_settings['catcbll_hide_btn_bghvr']) ? 1 : 0;
+
+$catcbll_custom_btn_alignment = isset($catcbll_settings['catcbll_custom_btn_alignment']) ? sanitize_text_field($catcbll_settings['catcbll_custom_btn_alignment']) : '';
+
+$catcbll_btn_fsize      = isset($catcbll_settings['catcbll_btn_fsize']) && is_numeric($catcbll_settings['catcbll_btn_fsize']) ? (int)$catcbll_settings['catcbll_btn_fsize'] : '';
+$catcbll_border_size    = isset($catcbll_settings['catcbll_border_size']) && is_numeric($catcbll_settings['catcbll_border_size']) ? (int)$catcbll_settings['catcbll_border_size'] : '';
+$catcbll_btn_radius     = isset($catcbll_settings['catcbll_btn_radius']) && is_numeric($catcbll_settings['catcbll_btn_radius']) ? (int)$catcbll_settings['catcbll_btn_radius'] : '';
+
+$catcbll_btn_bg         = isset($catcbll_settings['catcbll_btn_bg']) ? sanitize_text_field($catcbll_settings['catcbll_btn_bg']) : '';
+$catcbll_btn_fclr       = isset($catcbll_settings['catcbll_btn_fclr']) ? sanitize_text_field($catcbll_settings['catcbll_btn_fclr']) : '';
+$catcbll_btn_border_clr = isset($catcbll_settings['catcbll_btn_border_clr']) ? sanitize_text_field($catcbll_settings['catcbll_btn_border_clr']) : '';
+$catcbll_btn_hvrclr     = isset($catcbll_settings['catcbll_btn_hvrclr']) ? sanitize_text_field($catcbll_settings['catcbll_btn_hvrclr']) : '';
+
+$catcbll_padding_top_bottom = isset($catcbll_settings['catcbll_padding_top_bottom']) && is_numeric($catcbll_settings['catcbll_padding_top_bottom']) ? $catcbll_settings['catcbll_padding_top_bottom'] : '';
+$catcbll_padding_left_right = isset($catcbll_settings['catcbll_padding_left_right']) && is_numeric($catcbll_settings['catcbll_padding_left_right']) ? $catcbll_settings['catcbll_padding_left_right'] : '';
+
+
+
+/* Button Margin */
+$catcbll_margin_top    = isset($catcbll_settings['catcbll_margin_top']) && is_numeric($catcbll_settings['catcbll_margin_top']) ? $catcbll_settings['catcbll_margin_top'] : 0;
+$catcbll_margin_right  = isset($catcbll_settings['catcbll_margin_right']) && is_numeric($catcbll_settings['catcbll_margin_right']) ? $catcbll_settings['catcbll_margin_right'] : 0;
+$catcbll_margin_bottom = isset($catcbll_settings['catcbll_margin_bottom']) && is_numeric($catcbll_settings['catcbll_margin_bottom']) ? $catcbll_settings['catcbll_margin_bottom'] : 0;
+$catcbll_margin_left   = isset($catcbll_settings['catcbll_margin_left']) && is_numeric($catcbll_settings['catcbll_margin_left']) ? $catcbll_settings['catcbll_margin_left'] : 0;
+
+
+
+
+$btn_margin = "{$catcbll_margin_top}px {$catcbll_margin_right}px {$catcbll_margin_bottom}px {$catcbll_margin_left}px";
 
 /* Get product label and url in database */
-$pid = $product->get_id();
-$prd_lbl = get_post_meta($pid, '_catcbll_btn_label', true); //button post meta
-$prd_url = get_post_meta($pid, '_catcbll_btn_link', true); //button post meta   
+$pid     = $product->get_id();
+$prd_lbl = get_post_meta($pid, '_catcbll_btn_label', true);
+$prd_url = get_post_meta($pid, '_catcbll_btn_link', true);
 
-//count button values               
-if (is_array($prd_lbl)) {
-    $atxtcnt = count($prd_lbl);
-} else {
-    $atxtcnt = '';
-}
+//count button values
+$atxtcnt = is_array($prd_lbl) ? count($prd_lbl) : '';
 
-if ($btn_opnt_new_tab == "1") {
-    $trgtblnk = "target='_blank'";
-} else {
-    $trgtblnk = "";
-}
+$trgtblnk = ($btn_opnt_new_tab == "1") ? "target='_blank'" : '';
 
-/* positions*/
-if ($catcbll_custom_btn_position == 'left' || $catcbll_custom_btn_position == 'right') {
-    $display = 'inline-flex';
-} else {
-    $display = 'block';
-}
+/* positions */
+$catcbll_custom_btn_position = isset($catcbll_settings['catcbll_custom_btn_position']) ? sanitize_text_field($catcbll_settings['catcbll_custom_btn_position']) : '';
+$display = in_array($catcbll_custom_btn_position, ['left', 'right']) ? 'inline-flex' : 'block';
 
-if ((isset($catcbll_hide_btn_bghvr) && !empty($catcbll_hide_btn_bghvr)) || (isset($catcbll_btn_hvrclr) && !empty($catcbll_btn_hvrclr))) {
+$catcbll_hide_btn_bghvr = !empty($catcbll_settings['catcbll_hide_btn_bghvr']) ? 1 : 0;
+
+if ($catcbll_hide_btn_bghvr || !empty($catcbll_btn_hvrclr)) {
     $btncls = 'btn btn-lg catcbll';
     $imp = '';
 } else {
@@ -63,14 +73,12 @@ if ((isset($catcbll_hide_btn_bghvr) && !empty($catcbll_hide_btn_bghvr)) || (isse
     $imp = '!important';
 }
 
-if (isset($catcbll_ready_to_use) && !empty($catcbll_ready_to_use)) {
-    $btn_class = $catcbll_ready_to_use;
-} else {
-    $btn_class = $btncls;
-}
+$catcbll_ready_to_use = isset($catcbll_settings['catcbll_ready_to_use']) ? sanitize_text_field($catcbll_settings['catcbll_ready_to_use']) : '';
+$btn_class = !empty($catcbll_ready_to_use) ? $catcbll_ready_to_use : $btncls;
 
+$astra_active_or_not = isset($catcbll_settings['astra_active_or_not']) ? sanitize_text_field($catcbll_settings['astra_active_or_not']) : '';
 
-if (isset($astra_active_or_not) && $astra_active_or_not == 'Avada') {
+if ($astra_active_or_not === 'Avada') {
     $avada_style = 'display: inline-block;float: none !important;';
     $avada_hover = 'margin-left: 0px !important;';
 } else {
@@ -78,14 +86,9 @@ if (isset($astra_active_or_not) && $astra_active_or_not == 'Avada') {
     $avada_hover = '';
 }
 
-
-$moreinfo  = get_post_meta( $pid, '_catcbll_more_info', true );
-if(is_array($moreinfo)){
+$moreinfo = get_post_meta($pid, '_catcbll_more_info', true);
+if (is_array($moreinfo)) {
     $content = '';
-}else{
-    if(isset($moreinfo) && !empty($moreinfo)){
-        $content = $moreinfo;
-    }else{
-        $content = '';
-    }
+} else {
+    $content = (!empty($moreinfo)) ? $moreinfo : '';
 }

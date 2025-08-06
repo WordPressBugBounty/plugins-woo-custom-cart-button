@@ -16,7 +16,7 @@ if (is_admin()) {
             wp_enqueue_style(WCATCBLL_NAME . '-admin', WCATCBLL_CART_CSS . 'admin.css', array(), wp_rand());
 
             // Use local Font Awesome CSS
-            wp_enqueue_style('fontawesome', WCATCBLL_CART_CSS . 'font-awesome.min.css', array(), '4.7.0'); // Make sure to adjust this to your actual path and version
+            wp_enqueue_style(WCATCBLL_NAME . '_fontawesome_min', WCATCBLL_CART_ASSETS . 'libs/fontawesome/all.min.css', array(), WCATCBLL_VERSION); // Make sure to adjust this to your actual path and version
 
             wp_enqueue_style('wp-color-picker');
 
@@ -29,6 +29,7 @@ if (is_admin()) {
             wp_enqueue_script(WCATCBLL_NAME . '-ranger', WCATCBLL_CART_JS . 'ranger.js', array('jquery'), wp_rand(), true);
             wp_enqueue_script(WCATCBLL_NAME . '-admin', WCATCBLL_CART_JS . 'admin.js', array('jquery'), wp_rand(), true);
 
+            
             // Localize script
             $admin_url = strtok(admin_url('admin-ajax.php', (is_ssl() ? 'https' : 'http')), '?');
             wp_localize_script(WCATCBLL_NAME . '-admin', 'catcbll_vars', array(
@@ -51,7 +52,7 @@ if (is_admin()) {
                 'product_btn_labal' => __('Label', 'catcbll'),
                 'product_btn_url' => __('URL', 'catcbll'),
                 'product_btn_lbl_plchldr' => __('Add To Basket Or Shop Now Or Shop On Amazon', 'catcbll'),
-                'product_btn_lbl_desc' => __('This Text Will Be Shown On The Button Linking To The External Product', 'catcbll'),
+                'product_btn_lbl_desc' => __('This text will be shown on the custom add to cart button.', 'catcbll'),
                 'product_btn_url_desc' => __('Enter The External URL To The Product', 'catcbll'),
                 'product_btn_lbl_ont' => __('Open link In New Tab', 'catcbll'),
                 'product_btn_ont_desc' => __('If Checkbox Is Check Then Button Link Open In New Tab', 'catcbll'),
@@ -65,6 +66,7 @@ if (is_admin()) {
         wp_enqueue_style(WCATCBLL_NAME . '-users', WCATCBLL_CART_CSS . 'users.css', array(), wp_rand());
         wp_enqueue_style(WCATCBLL_NAME . '-hover', WCATCBLL_CART_CSS . 'hover.css', array(), wp_rand());
         wp_enqueue_style(WCATCBLL_NAME . '-hover-min', WCATCBLL_CART_CSS . 'hover-min.css', array(), wp_rand());
+        wp_enqueue_style(WCATCBLL_NAME . '-elementor-widgets', WCATCBLL_CART_CSS . 'elementor-widgets.css', array(), wp_rand());
         wp_enqueue_style(WCATCBLL_NAME . '-readytouse', WCATCBLL_CART_CSS . 'ready-to-use.css', array(), wp_rand());
     }
     add_action('wp_enqueue_scripts', 'wcatcbll_add_admin_scripts');

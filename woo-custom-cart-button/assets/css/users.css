@@ -38,9 +38,9 @@ form.cart {
 /*Archive page*/
 
 .catcbll_preview_button {
-    text-align: var(--text-align);
-    margin: var(--margin);
-    display: var(--display);
+    text-align: var(--wccb-text-align);
+    margin: var(--wccb-margin);
+    display: var(--wccb-display);
 }
 
 .catcbll_preview_button .fa {
@@ -48,14 +48,14 @@ form.cart {
 }
 
 .catcbll_preview_button .catcbll {
-    max-width: 100%;
-    color: var(--color);
-    font-size: var(--font-size);
-    padding: var(--padding);
-    border: var(--border);
-    border-color: var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--background-color);
+    max-width: 100%  !important;
+    color: var(--wccb-color) !important;
+    font-size: var(--wccb-font-size) !important;
+    padding: var(--wccb-padding) !important;
+    border: var(--wccb-border) !important;
+    border-color: var(--wccb-border-color) !important;
+    border-radius: var(--wccb-border-radius) !important;
+    background-color: var(--wccb-background-color) !important;
 }
 
 .catcbll_preview_button a {
@@ -74,9 +74,9 @@ form.cart {
 }
 
 .single-product .catcbll_preview_button {
-    text-align: var(--text-align);
-    margin: var(--margin);
-    display: var(--display);
+    text-align: var(--wccb-text-align);
+    margin: var(--wccb-margin);
+    display: var(--wccb-display);
 }
 
 .single-product .catcbll_preview_button .fa {
@@ -84,13 +84,13 @@ form.cart {
 }
 
 .single-product .catcbll_preview_button .catcbll {
-    color: var(--color);
-    font-size: var(--font-size);
-    padding: var(--padding);
-    border: var(--border);
-    border-color: var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--background-color);
+    color: var(--wccb-color);
+    font-size: var(--wccb-font-size);
+    padding: var(--wccb-padding);
+    border: var(--wccb-border);
+    border-color: var(--wccb-border-color);
+    border-radius: var(--wccb-border-radius);
+    background-color: var(--wccb-background-color);
 }
 
 .single-product .catcbll_preview_button a {

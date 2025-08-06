@@ -1,169 +1,179 @@
 <?php
-// hooks your functions into the correct filters
+// Add TinyMCE button for shortcode
 function wcatcbll_add_mce()
 {
-	// check user permissions
-	if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) {
-		return;
-	}
-	// check if WYSIWYG is enabled
-	if ('true' == get_user_option('rich_editing')) {
+	if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) return;
+	if ('true' === get_user_option('rich_editing')) {
 		add_filter('mce_external_plugins', 'wcatcbll_add_tinymce_plugin');
 		add_filter('mce_buttons', 'wcatcbll_register_mce_button');
 	}
 }
 add_action('admin_head', 'wcatcbll_add_mce');
 
-// register shortcode button in the editor
 function wcatcbll_register_mce_button($buttons)
 {
-	// Sanitize the shortcode button name before output
-	array_push($buttons, sanitize_text_field("wccb_shrtcd"));
+	$buttons[] = 'wccb_shrtcd';
 	return $buttons;
 }
 
-// declare a script for the Shortcode button
-// the script will insert the shortcode on the click event
 function wcatcbll_add_tinymce_plugin($plugin_array)
 {
-	// Safely output the URL of the JavaScript file using esc_url
-	$plugin_array['Wccbinsertshortcode'] = esc_url(WCATCBLL_CART_JS . 'wcatcbll_shortcode.js');
+	$plugin_array['Wccbinsertshortcode'] = WCATCBLL_CART_JS . 'wcatcbll_shortcode.js';
 	return $plugin_array;
 }
-
 
 if (!function_exists('wcatcbll_shortcode')) {
 	function wcatcbll_shortcode($atts = array())
 	{
-		$astra_active_or_not = get_option('template');
+		$astra_theme = get_option('template');
 
-		// Latest product showing when no product id passed
-		if (!empty($atts["pid"]) && isset($atts["pid"])) {
-			$pid = sanitize_text_field($atts['pid']); // Sanitize user input
-			$pids = explode(",", $pid);
-			$pid_count = count($pids);
-		} else {
-			$pid_count = 0;
+		$pid_list = isset($atts['pid']) ? sanitize_text_field($atts['pid']) : '';
+		$pids = !empty($pid_list) ? explode(',', $pid_list) : array();
+		$pid_count = count($pids);
+
+		$settings = get_option('_woo_catcbll_all_settings', array());
+		$default_vals = array(
+			'catcbll_btn_bg' => '',
+			'catcbll_btn_fsize' => '',
+			'catcbll_btn_fclr' => '',
+			'catcbll_btn_icon_cls' => '',
+			'catcbll_btn_border_clr' => '',
+			'catcbll_border_size' => '',
+			'catcbll_btn_icon_psn' => '',
+			'catcbll_both_btn' => '',
+			'catcbll_add2_cart' => '',
+			'catcbll_custom' => '',
+			'catcbll_btn_open_new_tab' => '',
+			'catcbll_margin_top' => '',
+			'catcbll_margin_right' => '',
+			'catcbll_margin_bottom' => '',
+			'catcbll_margin_left' => '',
+			'catcbll_custom_btn_position' => '',
+			'catcbll_hide_btn_bghvr' => '',
+			'catcbll_btn_hvrclr' => '',
+			'catcbll_btn_radius' => '',
+			'catcbll_padding_top_bottom' => '',
+			'catcbll_padding_left_right' => '',
+			'catcbll_custom_btn_alignment' => ''
+		);
+
+		extract(wp_parse_args($settings, $default_vals));
+		$shortcode_defaults = array(
+			'background'     => (isset($atts['background']) && !empty($atts['background']))
+				? sanitize_text_field($atts['background'])
+				: $catcbll_btn_bg,
+
+			'font_size'      => (isset($atts['font_size']) && !empty($atts['font_size']))
+				? sanitize_text_field($atts['font_size'])
+				: $catcbll_btn_fsize,
+
+			'font_color'     => (isset($atts['font_color']) && !empty($atts['font_color']))
+				? sanitize_text_field($atts['font_color'])
+				: $catcbll_btn_fclr,
+
+			'font_awesome'   => (isset($atts['font_awesome']) && !empty($atts['font_awesome']))
+				? sanitize_text_field($atts['font_awesome'])
+				: $catcbll_btn_icon_cls,
+
+			'border_color'   => (isset($atts['border_color']) && !empty($atts['border_color']))
+				? sanitize_text_field($atts['border_color'])
+				: $catcbll_btn_border_clr,
+
+			'border_size'    => (isset($atts['border_size']) && !empty($atts['border_size']))
+				? sanitize_text_field($atts['border_size'])
+				: $catcbll_border_size,
+
+			'icon_position'  => (isset($atts['icon_position']) && !empty($atts['icon_position']))
+				? sanitize_text_field($atts['icon_position'])
+				: $catcbll_btn_icon_psn,
+
+			'image'          => (isset($atts['image']) && !empty($atts['image']))
+				? sanitize_text_field($atts['image'])
+				: '',
+		);
+
+
+
+		foreach ($shortcode_defaults as $key => $default) {
+
+			if (isset($atts[$key]) && !is_array($atts[$key])) {
+				$$key = sanitize_text_field($atts[$key]);
+			} else {
+				$$key = $default;
+			}
 		}
 
-		// Button styling using shortcode parameters
-		$catcbll_settings = get_option('_woo_catcbll_all_settings');
-		extract($catcbll_settings);
-		$shortcode_attr = array('background', 'font_size', 'font_color', 'font_awesome', 'border_color', 'border_size', 'icon_position', 'image');
-		$option_key_vals = array();
+		$btn_margin = esc_attr($catcbll_margin_top) . 'px ' . esc_attr($catcbll_margin_right) . 'px ' . esc_attr($catcbll_margin_bottom) . 'px ' . esc_attr($catcbll_margin_left) . 'px';
+		$display = in_array($catcbll_custom_btn_position, ['left', 'right']) ? 'inline-flex' : 'block';
+		$imp = (!empty($catcbll_hide_btn_bghvr) || !empty($catcbll_btn_hvrclr)) ? '' : '!important';
+		$btn_class = empty($catcbll_hide_btn_bghvr) && empty($catcbll_btn_hvrclr) ? 'button' : 'btn';
+		$avada_style = ($astra_theme === 'Avada') ? 'display: inline-block;float: none !important;' : '';
 
-		foreach ($shortcode_attr as $key) {
-			if (isset($atts[$key])) {
-				$option_key_vals[$key] = sanitize_text_field($atts[$key]); // Sanitize user input
-				if (empty($option_key_vals[$key])) {
-					switch ($key) {
-						case 'background':
-							$option_key_vals[$key] = $catcbll_btn_bg;
-							break;
-						case 'font_size':
-							$option_key_vals[$key] = $catcbll_btn_fsize;
-							break;
-						case 'font_color':
-							$option_key_vals[$key] = $catcbll_btn_fclr;
-							break;
-						case 'font_awesome':
-							$option_key_vals[$key] = $catcbll_btn_icon_cls;
-							break;
-						case 'border_color':
-							$option_key_vals[$key] = $catcbll_btn_border_clr;
-							break;
-						case 'border_size':
-							$option_key_vals[$key] = $catcbll_border_size;
-							break;
-						case 'icon_position':
-							$option_key_vals[$key] = $catcbll_btn_icon_psn;
-							break;
-						default:
-							$option_key_vals[$key] = '';
+		$output = '<style>
+	form.cart { display:inline-block; }
+	.catcbll_preview_button {
+		text-align: ' . esc_attr($catcbll_custom_btn_alignment) . ';
+		margin: ' . esc_attr($catcbll_margin_top) . 'px ' . esc_attr($catcbll_margin_right) . 'px ' . esc_attr($catcbll_margin_bottom) . 'px ' . esc_attr($catcbll_margin_left) . 'px;
+		display: ' . esc_attr($display) . ';
+	}
+	.catcbll_preview_button .fa {
+		font-family: FontAwesome ' . $imp . ';
+	}
+	.' . esc_attr($catcbll_hide_btn_bghvr) . ':before {
+		border-radius: ' . esc_attr($catcbll_btn_radius) . 'px ' . $imp . ';
+		background: ' . esc_attr($catcbll_btn_hvrclr) . ' ' . $imp . ';
+		color: #fff ' . $imp . ';
+	}
+	.catcbll_preview_button .catcbll {
+		' . $avada_style . '
+		color: ' . esc_attr($font_color) . ' ' . $imp . ';
+		font-size: ' . esc_attr($font_size) . 'px ' . $imp . ';
+		padding: ' . esc_attr($catcbll_padding_top_bottom) . 'px ' . esc_attr($catcbll_padding_left_right) . 'px ' . $imp . ';
+		border: ' . esc_attr($border_size) . 'px solid ' . esc_attr($border_color) . ' ' . $imp . ';
+		border-radius: ' . esc_attr($catcbll_btn_radius) . 'px ' . $imp . ';
+		background-color: ' . esc_attr($background) . ' ' . $imp . ';
+	}
+	.catcbll_preview_button a {
+		text-decoration: none ' . $imp . ';
+	}
+	.catcbll:hover {
+		border-radius: ' . esc_attr($catcbll_btn_radius) . 'px ' . $imp . ';
+		background-color: ' . esc_attr($catcbll_btn_hvrclr) . ' ' . $imp . ';
+		color: #fff ' . $imp . ';
+	}
+</style>';
+
+
+		if ($pid_count > 0) {
+			foreach ($pids as $pid) {
+				if (get_post_type($pid) === 'product') {
+					$pimg_id = get_post_thumbnail_id($pid);
+					$pimg_url = wp_get_attachment_url($pimg_id);
+					$pimg_url = esc_url($pimg_url);
+
+					$prd_lbl_raw = get_post_meta($pid, '_catcbll_btn_label', true);
+
+					//$prd_lbl = is_array($prd_lbl_raw) ? reset($prd_lbl_raw) : $prd_lbl_raw;
+
+					$prd_url_raw = get_post_meta($pid, '_catcbll_btn_link', true);
+					//$prd_url = is_array($prd_url_raw) ? '' : esc_url($prd_url_raw);
+
+					$trgtblnk = ($catcbll_btn_open_new_tab == '1') ? "target='_blank'" : '';
+
+					// Render your custom button here
+					foreach ($prd_lbl_raw as $key => $prd_lbl) {
+						$prd_url = $prd_url_raw[$key];
+						$output .= '<div class="catcbll_preview_button">';
+						$output .= '<a class="catcbll ' . esc_attr($btn_class) . '" href="' . $prd_url . '" ' . $trgtblnk . '>' . esc_html($prd_lbl) . '</a>';
+						$output .= '</div>';
 					}
 				}
-			} else {
-				$background = $catcbll_btn_bg;
-				$font_size = $catcbll_btn_fsize;
-				$font_color = $catcbll_btn_fclr;
-				$font_awesome = $catcbll_btn_icon_cls;
-				$border_color = $catcbll_btn_border_clr;
-				$border_size = $catcbll_border_size;
-				$icon_position = $catcbll_btn_icon_psn;
-				$image = '';
-			}
-		}
-		extract($option_key_vals);
-
-		// Button display setting
-		$both = isset($catcbll_both_btn) ? sanitize_text_field($catcbll_both_btn) : '';
-		$add2cart = isset($catcbll_add2_cart) ? sanitize_text_field($catcbll_add2_cart) : '';
-		$custom = isset($catcbll_custom) ? sanitize_text_field($catcbll_custom) : '';
-		$btn_opnt_new_tab = isset($catcbll_btn_open_new_tab) ? sanitize_text_field($catcbll_btn_open_new_tab) : '';
-
-		// Button Margin
-		$btn_margin = esc_attr($catcbll_margin_top) . 'px ' . esc_attr($catcbll_margin_right) . 'px ' . esc_attr($catcbll_margin_bottom) . 'px ' . esc_attr($catcbll_margin_left) . 'px';
-
-?>
-<style>
-	<?php
-		if ($catcbll_custom_btn_position == 'left' || $catcbll_custom_btn_position == 'right') {
-			$display = 'display:inline-flex';
-		} else {
-			$display = 'display:block';
-		}
-
-		if (!empty($catcbll_hide_btn_bghvr) || !empty($catcbll_btn_hvrclr)) {
-			$btn_class = 'btn';
-			$imp = '';
-		} else {
-			$btn_class = 'button';
-			$imp = '!important';
-		}
-		if ($astra_active_or_not == 'Avada') {
-			$avada_style = 'display: inline-block;float: none !important;';
-		} else {
-			$avada_style = '';
-		}
-
-		echo 'form.cart{display:inline-block}';
-		echo '.catcbll_preview_button{text-align:' . esc_attr($catcbll_custom_btn_alignment) . ';margin:' . esc_attr($btn_margin) . ';display:' . esc_attr($display) . '}';
-		echo '.catcbll_preview_button .fa{font-family:FontAwesome ' . esc_attr($imp) . '}';
-		echo '.' . esc_attr($catcbll_hide_btn_bghvr) . ':before{border-radius:' . esc_attr($catcbll_btn_radius) . 'px ' . esc_attr($imp) . ';background:' . esc_attr($catcbll_btn_hvrclr) . ' ' . esc_attr($imp) . ';color:#fff ' . esc_attr($imp) . ';}';
-		echo '.catcbll_preview_button .catcbll{' . esc_attr($avada_style) . 'color:' . esc_attr($catcbll_btn_fclr) . ' ' . esc_attr($imp) . ';font-size:' . esc_attr($catcbll_btn_fsize) . 'px ' . esc_attr($imp) . ';padding:' . esc_attr($catcbll_padding_top_bottom) . 'px ' . esc_attr($catcbll_padding_left_right) . 'px ' . esc_attr($imp) . ';border:' . esc_attr($catcbll_border_size) . 'px solid ' . esc_attr($catcbll_btn_border_clr) . ' ' . esc_attr($imp) . ';border-radius:' . esc_attr($catcbll_btn_radius) . 'px ' . esc_attr($imp) . ';background-color:' . esc_attr($catcbll_btn_bg) . ' ' . esc_attr($imp) . ';}';
-		echo '.catcbll_preview_button a{text-decoration: none ' . esc_attr($imp) . ';}';
-		if (empty($catcbll_hide_btn_bghvr)) {
-			echo '.catcbll:hover{border-radius:' . esc_attr($catcbll_btn_radius) . ' ' . esc_attr($imp) . ';background-color:' . esc_attr($catcbll_btn_hvrclr) . ' ' . esc_attr($imp) . ';color:#fff ' . esc_attr($imp) . ';}';
-		}
-	?>
-</style>
-<?php
-
-		// Main logic for processing products and rendering buttons...
-		if ($pid_count > 0) {
-			for ($x = 0; $x < $pid_count; $x++) {
-				// Get featured image URL from the database
-				if (get_post_type($pids[$x]) == 'product') {
-					$pimg_id = get_post_meta($pids[$x], '_thumbnail_id', false);
-					$pimg_url = get_post($pimg_id[0]);
-					$pimg_url = esc_url($pimg_url->guid);
-
-					// Get button label, URL, and open-new-tab-checkbox value from the database
-					$prd_lbl = get_post_meta($pids[$x], '_catcbll_btn_label', true);
-					$prd_url = esc_url(get_post_meta($pids[$x], '_catcbll_btn_link', true));
-
-					$trgtblnk = ($btn_opnt_new_tab == "1") ? "target='_blank'" : "";
-
-					// Count button values               
-					$atxtcnt = is_array($prd_lbl) ? count($prd_lbl) : '';
-
-					// Remaining rendering logic goes here...
-				}
 			}
 		} else {
-			echo esc_html__('Please Write Us PID Parameter In Shortcode', 'catcbll') . " ([catcbll pid='Please change it to your product ID'])";
+			$output .= esc_html__('Please Write Us PID Parameter In Shortcode', 'catcbll') . " ([catcbll pid='Please change it to your product ID'])";
 		}
-	} // close function
+		
+		return $output;
+	}
 }
 add_shortcode('catcbll', 'wcatcbll_shortcode');
-?>

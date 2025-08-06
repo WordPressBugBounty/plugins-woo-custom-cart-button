@@ -1,45 +1,246 @@
 @charset "utf-8";
 
-.side_review iframe{
-    width: 100%;
-    height: 205px;
+/*Setting Page Header*/
+
+.navmenu nav {
+    background-color: #001c40 !important;
+    border-bottom: 1px solid #fff;
 }
-.side_review .youtube_button{
+
+.navbar-brand img {
+    max-width: 70px;
+}
+
+#catcbll_option_save nav {
+    background-color: #001c40 !important;
+    border-bottom: 1px solid #fff;
+}
+
+.navmenu nav {
+    background-color: #001c40 !important;
+    border-bottom: 1px solid #fff;
+}
+
+.navmenu {
+    font-family: sans-serif;
+}
+
+#navbarNav ul {
+    gap: 10px;
+    align-items: center;
+}
+
+#navbarNav li {
+    margin: 0;
+}
+
+#navbarNav .nav-link {
+    background: #fff;
+    border-radius: 3px;
+    border: 2px solid #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+#navbarNav li a.active {
+    background: #e55725;
+    color: #fff;
+}
+
+.glowing {
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    overflow: hidden;
+    -webkit-animation: glowing 1300ms infinite;
+    -moz-animation: glowing 1300ms infinite;
+    -o-animation: glowing 1300ms infinite;
+    animation: glowing 1300ms infinite;
+}
+
+.glowing1 {
+    --glow1: #f5a12c;
+    --glow2: #f5a12c;
+}
+
+@keyframes glowing {
+    0% {
+        background-color: var(--glow1);
+        box-shadow: 0 0 3px var(--glow1);
+        border: 0px;
+        color: #fff;
+    }
+
+    50% {
+        background-color: var(--glow2);
+        box-shadow: 0 0 15px var(--glow2);
+        border: 0px;
+        color: #fff;
+    }
+
+    100% {
+        background-color: var(--glow1);
+        box-shadow: 0 0 3px var(--glow1);
+        border: 0px;
+        color: #fff;
+    }
+}
+
+/*Setting Page Header*/
+
+/*Setting Welcome Page*/
+#welcome-panel .card {
+    border: 1px solid #e55725;
+    padding: 0
+}
+
+#welcome-panel .card-body {
+    display: grid;
+    height: 100%;
+    gap: 10px;
+    flex: none;
+    padding-top: 30px;
+}
+
+#welcome-panel .card_item {
     display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
 }
+
+#welcome-panel .card-header {
+    position: absolute;
+    top: -34px;
+    left: 15px;
+    background: transparent;
+    border: 0;
+    border-radius: 50px;
+    padding: 0;
+}
+
+#welcome-panel .card-header .w_icon i {
+    font-size: 30px;
+    background: white;
+    color: #e55725;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 0 0 #9d3612;
+    border: 1px solid #e55725;
+}
+
+.w_card_warp {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 20px;
+    padding: 50px 20px;
+    row-gap: 60px;
+}
+
+.w_card_warp p {
+    font-size: 14px;
+    color: #a3a3a3;
+    margin: 0
+}
+
+.w_card_warp .card-title {
+    font-size: 18px
+}
+
+.w_card_warp a {
+    background: #279548;
+    color: #fff;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #279548;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.w_card_warp .card .card_item a:hover {
+    background: transparent;
+    color: #279548;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    color: #fff;
+}
+
+/*Setting Welcome Page*/
+
+/*Setting page side bar*/
+
+#sidebar li.active,
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+    background-color: #ffffff26;
+}
+
+.side-navbar {
+    background: linear-gradient(243deg, #001c40 38%, #086487 99%, #086487 100%);
+    min-height: 80vh;
+}
+
+#submit_settings {
+    border-radius: 4px;
+    background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.8vw;
+    padding: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+/*Setting page sied bar*/
+
+/*Free vs Paid*/
+.freevspaid h6.card-header{
+    background: #08183f;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.freevspaid h6{
+    font-family: 'Poppins', sans-serif;
+}
+/*Free vs Paid*/
+
 #wpfooter {
     position: relative;
 }
 
-#wpcontent, #wpbody-content {
+.side_review iframe {
+    width: 100%;
+    height: 205px;
+}
+
+.side_review .youtube_button {
+    display: flex;
+    justify-content: space-between;
+}
+
+#wpcontent,
+#wpbody-content {
     padding: 0px;
 }
+
 .ourplugin .more_infor {
     font-weight: 700;
     padding: 5px;
     border-bottom: 2px dashed;
     display: inline-block;
     width: auto;
-  }
+}
 
-/* .ourplugin .more_infor:before {
-    content: '';
-    border-bottom: 1px solid #9b9494;
-    width: 100%;
-    height: 23%;
-    position: absolute;
-    bottom: 0;
-  }
-  .ourplugin .more_infor:after {
-    content: '';
-    border-bottom: 1px solid #9b9494;
-    width: 100%;
-    height: 23%;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-  } */
 /*Ready to use button*/
 .colbox {
     box-shadow: 0px 0px 5px 0px rgb(181 177 177 / 75%);
@@ -66,9 +267,11 @@
     -webkit-box-shadow: 0px 0px 20px 3px rgba(118, 109, 109, 0.45);
     -moz-box-shadow: 0px 0px 20px 3px rgba(118, 109, 109, 0.45);
 }
-.btn_card.active{
+
+.btn_card.active {
     position: relative;
 }
+
 .btn_card.active::before {
     content: "\2713";
     position: absolute;
@@ -85,6 +288,9 @@
 }
 
 /*Ready to use button*/
+
+
+
 .marqtg {
     margin-top: 20px;
     text-transform: capitalize;
@@ -98,6 +304,11 @@
     overflow: hidden;
     margin: 0 auto;
     display: block;
+    text-decoration: none !important;
+}
+
+input[type="datetime-local"] {
+    font-size: 12px;
 }
 
 .btnpd_st {
@@ -170,25 +381,31 @@
 .f-10 {
     font-size: 10px;
 }
-.profeature strong{
+
+.profeature strong {
     font-size: 12px;
 }
-.profeature li{
+
+.profeature li {
     margin-bottom: 0px;
     font-family: sans-serif;
 }
-.profeature ul li{
+
+.profeature ul li {
     font-size: 12px;
 }
-.ourplugin{
+
+.ourplugin {
     height: 100%;
 }
-.ourplugin a{
+
+.ourplugin a {
     text-decoration: none;
     font-size: 12px;
     color: #02486a;
     font-weight: bold;
 }
+
 /*Swtich check box css*/
 .switch {
     position: relative;
@@ -346,6 +563,7 @@ input:checked+.slider:before {
     border-bottom: 7px solid transparent;
     content: '';
 }
+
 .wp-picker-open+.wp-picker-input-wrap {
     display: flex;
     vertical-align: top;
@@ -397,25 +615,29 @@ input::-moz-focus-outer {
 }
 
 
-html{
+html {
     --scrollbarBG: #CFD8DC;
     --thumbBG: #3F51B5;
 }
 
-body::-webkit-scrollbar,.ourplugin::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.ourplugin::-webkit-scrollbar {
     width: 8px;
 }
 
-body,.ourplugin {
+body,
+.ourplugin {
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 
-body::-webkit-scrollbar-track,.ourplugin::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.ourplugin::-webkit-scrollbar-track {
     background: var(--scrollbarBG);
 }
 
-body::-webkit-scrollbar-thumb,.ourplugin::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.ourplugin::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG);
     border-radius: 6px;
     border: 3px solid var(--scrollbarBG);
@@ -433,7 +655,44 @@ body::-webkit-scrollbar-thumb,.ourplugin::-webkit-scrollbar-thumb {
         display: inline-block;
         vertical-align: middle;
     }
+
+    .hide_mobile {
+        display: none;
+    }
+
+    .side-navbar {
+        min-height: 20vh;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100px;
+        right: 10px;
+        background: #fff;
+        padding: 16px;
+        z-index: 99;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-collapse .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .w_card_warp {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .auto-fold #wpcontent {
+        padding: 0px;
+    }
+
+    .flex-column {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 
 @media (min-width:783px) {
     .ref_lnk .wp-picker-input-wrap label {
@@ -499,7 +758,7 @@ body::-webkit-scrollbar-thumb,.ourplugin::-webkit-scrollbar-thumb {
     }
 
     #submit_settings {
-        margin: 12px !important;
+        font-size: 12px !important;
     }
 }
 

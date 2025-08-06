@@ -1,3 +1,32 @@
+
+jQuery("#catc-tabContent .tab-pane").each(function () {
+    jQuery(this).removeClass('active');
+});
+jQuery("#wcatcbll_stng").each(function () {
+    var active_content = jQuery(this).find('.nav-link.active').attr('aria-controls');
+    jQuery('#' + active_content).addClass('active show');
+});
+
+/* Current tab active*/
+jQuery('#wcatcbll_stng .nav-link').click(function () {
+    jQuery("#wcatcbll_stng .nav-link").each(function () {
+        jQuery(this).parent().removeClass('active');
+    });
+    jQuery(this).parent().addClass('active');
+
+    jQuery("#catc-tabContent .tab-pane").each(function () {
+        jQuery(this).parent().removeClass('active');
+    });
+
+    var tab = jQuery(this).attr('aria-controls');
+    jQuery('#' + tab).addClass('active show');
+    var currentUrl = window.location.href + '&tab';
+    var url = new URL(currentUrl);
+    url.searchParams.set("tab", tab); // setting your param
+    var newUrl = url.href;
+    window.history.pushState('page2', 'Title', newUrl);
+});
+
 /*check for button show*/
 jQuery('input[class^="button"]').click(function() {
     "use strict";
@@ -172,7 +201,7 @@ jQuery(document).ready(function(jQuery) {
     jQuery('#btn_prvw').css("color", btn_fclr);
     var btn_hvrclr = jQuery('#catcbll_btn_hvrclr').val();
     var btn_brdrclr = jQuery('#catcbll_btn_border_clr').val();
-
+    jQuery('#btn_prvw').css("border-color", btn_brdrclr);
     var bg_transition = jQuery('#hide_btn_bghvr').val();
     if (btn_brdrclr) { var font_clr = '#fff'; } else { var font_clr = '#000'; }
     if (bg_transition) {
@@ -279,42 +308,20 @@ jQuery(document).ready(function(jQuery) {
         loop:true,
         margin:10,
         nav:false,
-        dots: false,
-       
+        dots: false,       
         autoplay:true,
         autoPlaySpeed: 5000,
         autoplayTimeout:5000,
         autoplayHoverPause:true,
         responsive: {
             0: {
-                items: 1
+                items: 2
             },
             600: {
-                items: 1
+                items:2
             },
             1000: {
-                items: 1
-            }
-        }
-    });
-    jQuery('#kinsta_banners').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        dots: false,
-        autoplay:true,
-        autoPlaySpeed: 5000,
-        autoplayTimeout:5000,
-        autoplayHoverPause:true,
-        responsive: {
-            0: {
                 items: 2
-            },
-            600: {
-                items: 2
-            },
-            1400: {
-                items: 3
             }
         }
     });

@@ -668,7 +668,7 @@ msgstr ""
 
 #: include/wcatcbll_inscrpt.php:52 include/wcatcbll_metabox.php:55
 #: include/wcatcbll_metabox.php:76
-msgid "This Text Will Be Shown On The Button Linking To The External Product"
+msgid "This text will be shown on the custom add to cart button."
 msgstr ""
 
 #: include/wcatcbll_inscrpt.php:53 include/wcatcbll_metabox.php:58
@@ -718,4 +718,909 @@ msgstr ""
 
 #: include/wcatcbll_widget.php:247
 msgid "Number of products to show"
+msgstr ""
+
+#: include/functions.php:13
+msgid "Custom Add to Cart - Welcome"
+msgstr ""
+
+
+#: include/functions.php:25
+msgid "Button Settings"
+msgstr ""
+
+
+#: include/functions.php:26
+msgid "Button Settings"
+msgstr ""
+
+
+#: include/wcatcbll_shortcode.php:173
+msgid "Please Write Us PID Parameter In Shortcode"
+msgstr ""
+
+
+#: include/wcatcbll_shortcode.php:173
+msgid "Please Write Us PID Parameter In Shortcode"
+msgstr ""
+
+
+#: include/wcatcbll_widget.php:23
+msgid "Products"
+msgstr ""
+
+
+#: include/wcatcbll_widget.php:135
+msgid "Title:"
+msgstr ""
+
+
+#: include/wcatcbll_widget.php:135
+msgid "Title:"
+msgstr ""
+
+
+#: include/wcatcbll_widget.php:139
+msgid "Number of Products:"
+msgstr ""
+
+
+#: include/wcatcbll_widget.php:139
+msgid "Number of Products:"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:7
+msgid "Open source"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:7
+msgid "Open source"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:12
+msgid "Change Text Font Size"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:13
+msgid "Change Border Size and Border Radius"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:14
+msgid "Change Button Background and Text Font Color"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:15
+msgid "Change Border color"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:16
+msgid "Change Hover Color"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:17
+msgid "Change Button Padding and Button Margin"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:18
+msgid "Use Button icon and change Button icon Position"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:19
+msgid "Use 2D Transitions"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:20
+msgid "Use Background Transitions"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:25
+msgid "Use Global Meanwhile through all the website"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:26
+msgid "Only Shop page to show the button"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:27
+msgid "Only Single Product Page"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:28
+msgid "Use Open link in new tab"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:31
+msgid "Custom Button Settings"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:33
+msgid "Use Both buttons settings"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:34
+msgid "Default Add to cart per Product"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:35
+msgid "Custom Button per Product"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:36
+msgid "Custom button alignment"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:38
+msgid "Compatible with Elementor."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:38
+msgid "Compatible with Elementor."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:40
+msgid "Elementor Widget"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:40
+msgid "Elementor Widget"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:46
+msgid "Pro / Paid version"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:46
+msgid "Pro / Paid version"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:55
+msgid "Separate margins, padding, and alignment options for shop and single product pages"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:55
+msgid "Separate margins, padding, and alignment options for shop and single product pages"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:79
+msgid "Sold Out Buttons"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:79
+msgid "Sold Out Buttons"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:81
+msgid "Out of Stock Buttons which appear automatically when Product is out of Stock."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:81
+msgid "Out of Stock Buttons which appear automatically when Product is out of Stock."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:91
+msgid "Shortcode generator"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:91
+msgid "Shortcode generator"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:112
+msgid "Compatible with Elementor."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:112
+msgid "Compatible with Elementor."
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:129
+msgid "YouTube video player"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:129
+msgid "YouTube video player"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:222
+msgid "Kinsta Hosting"
+msgstr ""
+
+
+#: include/admin/wcatcbll_freevspaid.php:222
+msgid "Kinsta Hosting"
+msgstr ""
+
+
+#: include/admin/wcatcbll_sidebar.php:9
+msgid "General"
+msgstr ""
+
+
+#: include/admin/wcatcbll_sidebar.php:10
+msgid "Layout & Style"
+msgstr ""
+
+
+#: include/admin/wcatcbll_sidebar.php:12
+msgid "Ready to use"
+msgstr ""
+
+
+#: include/admin/wcatcbll_topbar.php:11
+msgid "Welcome"
+msgstr ""
+
+
+#: include/admin/wcatcbll_topbar.php:17
+msgid "Free vs Paid"
+msgstr ""
+
+
+#: include/admin/wcatcbll_topbar.php:20
+msgid "Review"
+msgstr ""
+
+
+#: include/admin/wcatcbll_topbar.php:23
+msgid "GET PRO"
+msgstr ""
+
+
+#: include/admin/wcatcbll_topbar.php:30
+msgid "Knowledge Base"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:16
+msgid "Documentation"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:18
+msgid "Get now"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:30
+msgid "Support"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:31
+msgid "Please do not hesitate to contact us if you require assistance or want a free store set-up. We will assist you within 12-24 hours of receiving your inquiry."
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:33
+msgid "Get support"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:45
+msgid "Write a review"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:46
+msgid "If you’re loving how our product has helped your business, please let the WordPress community know by leaving us a review on our WP repository. Which will motivate us a lot."
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:47
+msgid "Review"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:59
+msgid "Missing any feature?"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:60
+msgid "Have you ever noticed a missing feature? If you do so please notify us. As soon as possible, our staff will add all the necessary features based on your requests. We always try to fulfill their demands."
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:61
+msgid "Request"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:73
+msgid "Video tutorial"
+msgstr ""
+
+
+#: include/admin/wcatcbll_welcome.php:76
+msgid "Video tutorial"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:134
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:134
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:135
+msgid "Elementor"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:135
+msgid "Elementor"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:156
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:156
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:157
+msgid "Elementor"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:157
+msgid "Elementor"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:179
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:179
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:180
+msgid "PHP"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:180
+msgid "PHP"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:202
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:202
+msgid "WooCommerce Custom Cart Button - Elementor Widgets"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:203
+msgid "WooCommerce"
+msgstr ""
+
+
+#: include/elementor/class-catcbll-elementor-widgets.php:203
+msgid "WooCommerce"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:37
+msgid "Product Custom Buttons"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:37
+msgid "Product Custom Buttons"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:80
+msgid "Product Settings"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:80
+msgid "Product Settings"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:88
+msgid "Show Product Info"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:88
+msgid "Show Product Info"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:90
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:90
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:91
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:91
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:100
+msgid "Show Product Image"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:100
+msgid "Show Product Image"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:102
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:102
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:103
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:103
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:115
+msgid "Show Product Title"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:115
+msgid "Show Product Title"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:117
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:117
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:118
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:118
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:130
+msgid "Show Product Price"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:130
+msgid "Show Product Price"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:132
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:132
+msgid "Yes"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:133
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:133
+msgid "No"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:150
+msgid "Information"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:150
+msgid "Information"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:160
+msgid "Styling Information:"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:160
+msgid "Styling Information:"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:161
+msgid "Button styling is controlled by the plugin settings page. Go to Custom Add to Cart → Button Settings to customize colors, fonts, borders, and other styling options."
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:161
+msgid "Button styling is controlled by the plugin settings page. Go to Custom Add to Cart → Button Settings to customize colors, fonts, borders, and other styling options."
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:180
+msgid "No product found on this page. This widget works on product pages."
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:180
+msgid "No product found on this page. This widget works on product pages."
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:186
+msgid "Product not found"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:186
+msgid "Product not found"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:529
+msgid "Product Custom Buttons Widget"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:529
+msgid "Product Custom Buttons Widget"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:530
+msgid "This widget will automatically display buttons according to your plugin settings (Dual Button, Default WooCommerce Button, Custom ATC Button Per Product)."
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php:530
+msgid "This widget will automatically display buttons according to your plugin settings (Dual Button, Default WooCommerce Button, Custom ATC Button Per Product)."
+msgstr ""
+
+
+#: include/tabs/general.php:19
+msgid "Default WooCommerce Button"
+msgstr ""
+
+
+#: include/tabs/general.php:19
+msgid "Default WooCommerce Button"
+msgstr ""
+
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product Title"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product Image"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Add to Cart"
+msgstr ""
+
+
+#: helpers/helpers.php
+msgid "Go back"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Settings"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Live Demo"
+msgstr ""
+
+
+#: catcbll.php
+msgid "Pro Demo"
+msgstr ""
+
+
+#: include/elementor/widgets/class-catcbll-product-button-widget.php
+msgid "Product not found"
+msgstr ""
+
+
+#: include/wcatcbll_metabox.php
+msgid "https://example.com"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Submit"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Save Changes"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Reset"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Cancel"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Delete"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Edit"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Update"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Remove"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Add New"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Select"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Choose"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Browse"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Upload"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Download"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Preview"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "View"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Details"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Information"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Description"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Instructions"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Help"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Support"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Documentation"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "FAQ"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Contact"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "About"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Version"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Author"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "License"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Requirements"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Compatibility"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Changelog"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Screenshots"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Reviews"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Rating"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Downloaded"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Last Updated"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Tested"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Languages"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Tags"
+msgstr ""
+
+
+#: include/tabs/general.php
+msgid "Categories"
 msgstr ""
