@@ -69,7 +69,7 @@ if (!function_exists('catcbll_woo_single_temp_custom_act_btn')) {
         </style>
 <?php
         // Check if buttons should be displayed based on global and single settings
-        $should_display_buttons = ($global == 'global' && $single == 'single-product');
+        $should_display_buttons = ($single == 'single-product'); //$global == 'global' && 
         
         // Only show custom buttons if display conditions are met
         if ($should_display_buttons) {

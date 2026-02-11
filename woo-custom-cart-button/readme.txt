@@ -49,7 +49,7 @@ Boost your WooCommerce store with a fully customizable "Add to Cart" button. Cha
 
 **See the plugin in action:**
 - Version 2.0 Updates
-https://www.youtube.com/watch?v=sBKx6Els5ss)
+https://www.youtube.com/watch?v=sBKx6Els5ss
 
 == Installation ==
 
@@ -102,7 +102,7 @@ For help and support:
 * [Reviews](https://wordpress.org/support/plugin/woo-custom-cart-button/reviews/)
 
 == Pro Version Demo Video ==
-https://www.youtube.com/watch?v=zd13VVKyEwk&list=PLf40i-H5Xnm5zq-T4eNVfm18G-hs0EM3x
+https://www.youtube.com/watch?v=3HIVIe90L5M&list=PLf40i-H5Xnm7Mwa0Ikzv0IrjbMHIiODAK
 
 == Screenshots ==
 
