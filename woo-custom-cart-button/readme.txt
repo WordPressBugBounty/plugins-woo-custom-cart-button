@@ -1,9 +1,9 @@
 === Custom Add to Cart Button Label and Link for WooCommerce ===
 Contributors: coder426
-Tags: woocommerce custom add to cart button, custom cart button, change add to cart text, affiliate button woocommerce, custom product button, shop button, woocommerce, quote
-Requires at least: 6.4
-Tested up to: 6.8
-Requires PHP: 8.0
+Tags: woocommerce custom add to cart button, custom product button, change add to cart text, affiliate button woocommerce, custom cart button, shop button, woocommerce, quote
+Requires at least: 6.9.4
+Tested up to: 7.0
+Requires PHP: 8.1
 Stable tag: 2.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html

@@ -5,11 +5,11 @@
  * Plugin URI:	    https://plugins.hirewebxperts.com/custom-add-to-cart/
  * Description:	    WooCommerce Custom ATC button plugin provides that has ability to change woocommerce each product's Add To Cart button with user specific name.
  * Version: 		2.0	
- * Requires at least: 6.5
- * Requires PHP:    8.0
+ * Requires at least: 6.9.4
+ * Requires PHP:    8.1
  * Author: 		    Coder426
  * Author URI:	    https://www.hirewebxperts.com
- * Donate link: 	https://hirewebxperts.com/donate/
+ * Donate link: 	https://plugins.hirewebxperts.com/
  * Text Domain:     catcbll
  * Domain Path:	    /i18n/languages
  * License:         GPLv3
